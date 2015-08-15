@@ -28,10 +28,10 @@ Usage: <Program>.exe with:
 
 --addr_exclude[-e] <address exclude file> (Optional)
 
---debug_mode[-d] - Enables debug mode(Optional)
+--debug_mode[-d] - Enables debug mode (Optional)
 
 
-API library/names format is for each API call a new line matching (without the quotes) "<lib name>,<api name>".
+API library/names format is as seen within the example text file apis_to_hook.txt.
 
 ##Compiling & Dependencies
 
