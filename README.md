@@ -4,7 +4,7 @@ Created by: Sec-Mini-Projects (2015) under the MIT License - See "LICENSE" for D
 
 ##Description:
 
-Starts the execution of a vulnerable program with optional command line parameters and hooks the API names read from a text file.  When these API calls are hit, the program will constantly run until return and check the return address for shellcode like characteristics.
+Starts the execution of a x86 32 bit **ONLY** vulnerable program with optional command line parameters and hooks the API names read from a text file.  When these API calls are hit, the program will constantly run until return and check the return address for shellcode like characteristics.
 
 **I don't claim this program to be 100% stable, but have had a lot of success in the past.**
 
