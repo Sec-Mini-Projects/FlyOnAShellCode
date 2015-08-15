@@ -34,11 +34,11 @@ Usage: Program.exe with:
 --debug_mode[-d] - Enables debug mode (Optional)
 
 
-API library/names format:
+##API library/names format:
 
 "kernel32.dll,CreateFileA"
 
-Address exclusion text file format (hacky way to avoid ASLR issues, needs to be fixed at some point):
+##Address exclusion text file format (hacky way to avoid ASLR issues, needs to be fixed at some point):
 
 "mso.dll,\<last two bytes of the address within MSO.dll\>"
 
