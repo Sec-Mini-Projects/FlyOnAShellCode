@@ -29,7 +29,8 @@ Usage: Program.exe with:
 
 --cmd_line[-c] <Command line arguments> (Optional)
 
---addr_exclude[-e] <address exclude file> (Optional)
+--addr_exclude[-e] <address exclude file>  (Optional)
+
 
 --debug_mode[-d] - Enables debug mode (Optional)
 
