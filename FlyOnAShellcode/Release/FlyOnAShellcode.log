@@ -1,0 +1,41 @@
+﻿Build started 8/15/2015 1:38:00 PM.
+     1>Project "D:\PatchesNData\Reverse Engineering\Shellcode DBGEngine Detector\for git\FlyOnAShellcode\FlyOnAShellcode.vcxproj" on node 2 (rebuild target(s)).
+     1>_PrepareForClean:
+         Deleting file "Release\FlyOnAShellcode.lastbuildstate".
+       InitializeBuildStatus:
+         Touching "Release\FlyOnAShellcode.unsuccessfulbuild".
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Ot /Oy- /D WIN32 /D NDEBUG /D _CONSOLE /D _MBCS /Gm /EHsc /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp"Release\FlyOnAShellcode.pch" /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Ot /Oy- /D WIN32 /D NDEBUG /D _CONSOLE /D _MBCS /Gm /EHsc /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Release\FlyOnAShellcode.pch" /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt FlyOnAShellcode.cpp
+         FlyOnAShellcode.cpp
+     1>FlyOnAShellcode.cpp(52): warning C4996: '_strlwr': This function or variable may be unsafe. Consider using _strlwr_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(164) : see declaration of '_strlwr'
+     1>FlyOnAShellcode.cpp(134): warning C4996: '_strlwr': This function or variable may be unsafe. Consider using _strlwr_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(164) : see declaration of '_strlwr'
+     1>FlyOnAShellcode.cpp(162): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(234) : see declaration of 'fopen'
+     1>FlyOnAShellcode.cpp(171): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(234) : see declaration of 'fopen'
+     1>FlyOnAShellcode.cpp(175): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(197) : see declaration of 'strtok'
+     1>FlyOnAShellcode.cpp(176): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(197) : see declaration of 'strtok'
+     1>FlyOnAShellcode.cpp(205): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(197) : see declaration of 'strtok'
+     1>FlyOnAShellcode.cpp(206): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(197) : see declaration of 'strtok'
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\PatchesNData\Reverse Engineering\Shellcode DBGEngine Detector\for git\Release\FlyOnAShellcode.exe" /INCREMENTAL:NO /NOLOGO ../TitanEngine/TitanEngine_x86.lib psapi.lib imagehlp.lib Shlwapi.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\FlyOnAShellcode.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\PatchesNData\Reverse Engineering\Shellcode DBGEngine Detector\for git\Release\FlyOnAShellcode.pdb" /SUBSYSTEM:CONSOLE /OPT:REF /OPT:ICF /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\PatchesNData\Reverse Engineering\Shellcode DBGEngine Detector\for git\Release\FlyOnAShellcode.lib" /MACHINE:X86 Release\FlyOnAShellcode.obj
+         Release\stdafx.obj
+         FlyOnAShellcode.vcxproj -> D:\PatchesNData\Reverse Engineering\Shellcode DBGEngine Detector\for git\Release\FlyOnAShellcode.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"D:\PatchesNData\Reverse Engineering\Shellcode DBGEngine Detector\for git\Release\FlyOnAShellcode.exe;#1" /manifest Release\FlyOnAShellcode.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         Deleting file "Release\FlyOnAShellcode.unsuccessfulbuild".
+         Touching "Release\FlyOnAShellcode.lastbuildstate".
+     1>Done Building Project "D:\PatchesNData\Reverse Engineering\Shellcode DBGEngine Detector\for git\FlyOnAShellcode\FlyOnAShellcode.vcxproj" (rebuild target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.79

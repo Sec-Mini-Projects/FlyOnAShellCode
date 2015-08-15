@@ -1,0 +1,4 @@
+kernel32.dll,GetStartupInfoA
+kernel32.dll,MapViewOfFile
+kernel32.dll,WriteFile
+kernel32.dll,CreateFileA

@@ -1,0 +1,3 @@
+kernel32.dll,IsDebuggerPresent
+kernel32.dll,GetTempPathA
+kernel32.dll,CreateFileA
