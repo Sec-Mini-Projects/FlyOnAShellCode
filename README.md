@@ -16,7 +16,7 @@ Avoid manually navigating the \"File Open\", etc dialogs from within the program
 
 ##Usage
 
-Usage: <Program>.exe with:
+Usage: Program.exe with:
 
 --program[-p] <Program full path and name>
 
