@@ -41,6 +41,6 @@ Compile the latest TitanEngine project (http://reversinglabs.com/open-source/tit
 
 **Example: Place the binaries and ".lib" file in the "<root>\TitanEngine\" folder and the dll into the same directory as the main .EXE**
 
-Compile the latest scyllaHide project and place the dll and configuration file in appropriate folder.
+Compile the latest scyllaHide project and place the dll and configuration file within the appropriate folder.
 
 **Example: Place the SycllaHide dll file in the "<root>\Release\plugins\x86\" folder.**
