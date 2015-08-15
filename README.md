@@ -27,7 +27,7 @@ Usage: Program.exe with:
 
 --api_list[-a] <API hook list path and name>
 
---cmd_line[-c] <Command line arguments> (Optional)
+--cmd_line[-c] <Cmd line arguments> (Optional)
 
 --addr_exclude[-e] <address exclude file> (Optional)
 
