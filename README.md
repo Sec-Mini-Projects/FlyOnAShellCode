@@ -12,7 +12,7 @@ This program will RUN the supplied executable and malicious input file. USE ONLY
 ##Notes
 
 This program can be anywhere from very stable to very unstable depending on which APIs are hooked.
-Avoid manually navigating the \"File Open\", etc dialogs from within the program will help eliminate crashes.
+Avoid manually navigating the "File Open", etc dialogs from within the program will help eliminate crashes.
 
 ##Usage
 
