@@ -34,14 +34,20 @@ Usage: Program.exe with:
 --debug_mode[-d] - Enables debug mode (Optional)
 
 
-#####API_List library/names text file format (without quotes and each entry on a new line):
+#####API_List library/names text file format (each library and api on a new line):
 
-"kernel32.dll,CreateFileA"
+kernel32.dll,CreateFileA
+kernel32.dll,WriteFile
+....
 
-#####Addr_Exclude exclusion text file format: (hacky way to avoid ASLR issues, needs to be fixed at some point).
-#####without quotes and each entry on a new line.
+#####Addr_Exclude exclusion text file format (each library and adddress on a new line)
 
-"mso.dll,\<last two bytes of the address within MSO.dll\>"
+mso.dll,0x2222
+mso.dll,0x3333
+....
+
+The second paramter is the last two bytes of the address to be whitelisted. This is a hacky solution to avoid ASLR issues, there is a way to solve this issue.
+
 
 ##Compiling & Dependencies
 
