@@ -37,12 +37,14 @@ Usage: Program.exe with:
 #####API_List library/names text file format (each library and api on a new line):
 
 kernel32.dll,CreateFileA
+
 kernel32.dll,WriteFile
 ....
 
 #####Addr_Exclude exclusion text file format (each library and adddress on a new line)
 
 mso.dll,0x2222
+
 mso.dll,0x3333
 ....
 
