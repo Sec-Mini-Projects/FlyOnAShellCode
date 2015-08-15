@@ -21,31 +21,24 @@ Avoid manually navigating the "File Open", etc dialogs from within the program w
 
 Usage: Program.exe with:
 
---program[-p] <Program full path and name>
-
---working_dir[-w] <working directory>
-
---api_list[-a] <API hook list path and name>
-
---cmd_line[-c] <Cmd line arguments> (Optional)
-
---addr_exclude[-e] \<address exclude file> (Optional)
-
---debug_mode[-d] - Enables debug mode (Optional)
+--program[-p] <Program full path and name> <br>
+--working_dir[-w] <working directory> <br>
+--api_list[-a] <API hook list path and name> <br>
+--cmd_line[-c] <Cmd line arguments> (Optional) <br>
+--addr_exclude[-e] \<address exclude file> (Optional) <br>
+--debug_mode[-d] - Enables debug mode (Optional) <br>
 
 
 #####API_List library/names text file format (each library and api on a new line):
 
-kernel32.dll,CreateFileA
-
-kernel32.dll,WriteFile
+kernel32.dll,CreateFileA <br>
+kernel32.dll,WriteFile <br>
 ....
 
 #####Addr_Exclude exclusion text file format (each library and adddress on a new line)
 
-mso.dll,0x2222
-
-mso.dll,0x3333
+mso.dll,0x2222 <br>
+mso.dll,0x3333 <br>
 ....
 
 The second paramter is the last two bytes of the address to be whitelisted. This is a hacky solution to avoid ASLR issues, there is a way to solve this issue.
