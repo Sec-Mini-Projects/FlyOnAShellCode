@@ -16,12 +16,20 @@ Avoid manually navigating the \"File Open\", etc dialogs from within the program
 
 ##Usage
 
-Usage: --program[-p] <Program full path and name> 
---working_dir[-w] <working directory> 
+Usage: <Program>.exe with:
+
+--program[-p] <Program full path and name>
+
+--working_dir[-w] <working directory>
+
+--api_list[-a] <API hook list path and name>
+
 --cmd_line[-c] <Command line arguments> (Optional)
---api_list[-a] <API hook list path and name> 
+
 --addr_exclude[-e] <address exclude file> (Optional)
+
 --debug_mode[-d] - Enables debug mode(Optional)
+
 
 API library/names format is for each API call a new line matching (without the quotes) "<lib name>,<api name>".
 
