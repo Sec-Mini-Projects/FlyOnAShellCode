@@ -50,7 +50,7 @@ Compiled & written using Visual Studio 2010.
 
 Compile the latest TitanEngine project (http://reversinglabs.com/open-source/titanengine.html.) which is used as the debugging engine in this program.
 
-**Example: Place the binaries and ".lib" file in the "<root>\TitanEngine\" folder and the dll into the same directory as the main .EXE**
+**Example: Place the binaries and ".lib" file into the "<root>\TitanEngine\" folder and the dll into the same directory as the main .EXE**
 
 Compile the latest scyllaHide project and place the dll and configuration file into the appropriate folder.
 
