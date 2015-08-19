@@ -35,7 +35,7 @@ kernel32.dll,CreateFileA <br>
 kernel32.dll,WriteFile <br>
 ....
 
-#####Addr_Exclude exclusion text file format (each library and adddress on a new line)
+#####Addr_Exclude exclusion text file format (each library and address on a new line)
 
 mso.dll,0x2222 <br>
 mso.dll,0x3333 <br>
