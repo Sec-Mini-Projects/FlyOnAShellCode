@@ -310,7 +310,7 @@ int main(int argc, char * argv[])
 	else
 	{
 		printf("\nFlyOnAShellcode V2.8.\n");
-		printf("Sec-Mini-Projects (2015) under the MIT License - See "LICENSE" for Details.\n");
+		printf("Sec-Mini-Projects (2015) under the MIT License - See \"LICENSE\" for Details.\n");
 		printf("TitanEngine is used as the debugging engine in this program - http://reversinglabs.com/open-source/titanengine.html.\n");
 		printf("***WARNING*** - This program will RUN the supplied executable and malicious input file. USE ONLY IN MALWARE RESEARCH LABS.\n\n");
 		printf("Note 1 - This program can be anywhere from very stable to very unstable depending on which APIs are hooked.\n\n");
