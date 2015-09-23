@@ -113,7 +113,7 @@ void __stdcall BPHandler()
 	HANDLE created_thread = CreateThread(NULL,NULL,(LPTHREAD_START_ROUTINE)StepOver,OnStep,NULL,NULL);
 	if(created_thread == NULL)
 	{
-		printf("***###ERROR### - Onstep thread creation failed, in-complete results are likely.***\n");
+		printf("***###ERROR### - Onstep thread creation failed, incomplete results are likely.***\n");
 	}
 	//StepOver(OnStep);
 }

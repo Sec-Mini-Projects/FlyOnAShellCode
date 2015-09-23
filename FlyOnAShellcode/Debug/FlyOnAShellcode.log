@@ -1,4 +1,4 @@
-﻿Build started 9/23/2015 10:19:53 PM.
+﻿Build started 9/23/2015 11:03:21 PM.
      1>Project "D:\PatchesNData\GIT Open Source Projects\FlyOnAShellCode\FlyOnAShellcode\FlyOnAShellcode.vcxproj" on node 2 (rebuild target(s)).
      1>_PrepareForClean:
          Deleting file "Debug\FlyOnAShellcode.lastbuildstate".
@@ -50,4 +50,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:02.49
+Time Elapsed 00:00:02.73
