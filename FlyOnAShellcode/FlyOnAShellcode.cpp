@@ -23,8 +23,7 @@ void __stdcall CheckForShellcode()
 	{
 		int buf_len = 600;
 		ULONG_PTR ip = (ULONG_PTR)GetContextData(UE_EIP);
-		LPSTR temp = (char*)calloc(255,sizeof(char));
-		LPSTR mod_name = (LPSTR)calloc(1,buf_len);
+		LPSTR mod_name = (LPSTR)calloc(buf_len,sizeof(CHAR));
 		GetMappedFileName(info->hProcess,(LPVOID)ip,(LPSTR)mod_name,buf_len);
 		unsigned short last_16_bits = (unsigned short)(ip);
 		bool is_Avoid = false;
@@ -56,7 +55,7 @@ void __stdcall CheckForShellcode()
 			{
 				if(mem_info->Protect > 0x20 || StrStrI(strrchr(mod_name,'\\'),".") == NULL)
 				{
-					LPSTR seg_dump_name = (LPSTR)calloc(buf_len,sizeof(char));
+					LPSTR seg_dump_name = (LPSTR)calloc(buf_len,sizeof(CHAR));
 					sprintf_s(seg_dump_name,buf_len,"%x Seg Dump.bin",mem_info->BaseAddress);
 					printf("Found exploit - creating full and partial dumps.\n");
 					DumpMemory(info->hProcess,mem_info->BaseAddress,mem_info->RegionSize,seg_dump_name);
@@ -77,8 +76,6 @@ void __stdcall CheckForShellcode()
 		}
 		if(mod_name)
 			free(mod_name);
-		if(temp)
-			free(temp);
 	}
 }
 
@@ -156,9 +153,8 @@ void __stdcall OnEntry()
 {
 	ep = GetContextData(UE_EIP);
 	int buf_len = 500;
-    LPSTR buf = (LPSTR)calloc(buf_len,sizeof(char));
-	LPSTR exclude_buf = (LPSTR)calloc(buf_len,sizeof(char));
-	int temp = strlen(buf);
+    LPSTR buf = (LPSTR)calloc(buf_len,sizeof(CHAR));
+	LPSTR exclude_buf = (LPSTR)calloc(buf_len,sizeof(CHAR));
 	FILE * f_api_file = fopen(api_file,"r");
 	FILE * f_exclude_file = NULL;
 	if (addr_exclude_file == NULL)
@@ -182,7 +178,7 @@ void __stdcall OnEntry()
 				if(exclude_lib[strlen(exclude_lib)-1] == 0x0a)
 					exclude_lib[strlen(exclude_lib)-1] = 0x00;
 				long exclude_this_addr = strtol(exclude_addr,NULL,16);
-				exclude_libs[x] = (LPSTR)calloc(buf_len,sizeof(char));
+				exclude_libs[x] = (LPSTR)calloc(buf_len,sizeof(CHAR));
 				exclude_addrs[x] = exclude_this_addr;
 				strcpy_s(exclude_libs[x],buf_len,exclude_lib);
 				if(debug_mode == true)
@@ -258,7 +254,6 @@ void __stdcall OnEntry()
 //Inits the debugger library and callbacks.
 int main(int argc, char * argv[])
 {
-
 	int x = 1;
 	LPSTR program = NULL;
 	LPSTR working = NULL;
@@ -309,7 +304,7 @@ int main(int argc, char * argv[])
 	}
 	else
 	{
-		printf("\nFlyOnAShellcode V2.8.\n");
+		printf("\nFlyOnAShellcode V2.9.\n");
 		printf("Sec-Mini-Projects (2015) under the MIT License - See \"LICENSE\" for Details.\n");
 		printf("TitanEngine is used as the debugging engine in this program - http://reversinglabs.com/open-source/titanengine.html.\n");
 		printf("***WARNING*** - This program will RUN the supplied executable and malicious input file. USE ONLY IN MALWARE RESEARCH LABS.\n\n");
