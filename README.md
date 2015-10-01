@@ -41,7 +41,7 @@ mso.dll,0x2222 <br>
 mso.dll,0x3333 <br>
 ....
 
-The second paramter is the last two bytes of the address to be whitelisted. This is a hacky solution to avoid ASLR issues, there is a way to solve this issue.  This option may be required if a program executes legitimate code from RWX memory.  Add the library name and last two bytes of the address which calls into the RWX allocated memory.
+The second paramter is the last two bytes of the address to be whitelisted. This is a hacky solution to avoid ASLR issues, there is a better way to solve this issue.  This option may be required if a program executes legitimate code from RWX memory.  Add the library name and last two bytes of the address which calls into the RWX allocated memory.
 
 
 ##Compiling & Dependencies
