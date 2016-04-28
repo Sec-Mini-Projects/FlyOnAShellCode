@@ -6,7 +6,7 @@
 #include <stdio.h>
 #include <iostream>
 #include <tchar.h>
-#include <TitanEngine.h>
+#include "TitanEngine.h"
 #include <psapi.h>
 #include <string.h>
 #include <Shlwapi.h>

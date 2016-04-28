@@ -1,0 +1,59 @@
+﻿Build started 4/28/2016 10:16:08 PM.
+     1>Project "D:\PatchesNData\Reverse Engineering\Shellcode DBGEngine Detector\for git\FlyOnAShellcode\FlyOnAShellcode.vcxproj" on node 2 (rebuild target(s)).
+     1>InitializeBuildStatus:
+         Touching "x64\Debug\FlyOnAShellcode.unsuccessfulbuild".
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /Od /D WIN32 /D _DEBUG /D _CONSOLE /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp"x64\Debug\FlyOnAShellcode.pch" /Fo"x64\Debug\\" /Fd"x64\Debug\vc100.pdb" /Gd /TP /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\CL.exe /c /Zi /nologo /W3 /WX- /Od /D WIN32 /D _DEBUG /D _CONSOLE /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"x64\Debug\FlyOnAShellcode.pch" /Fo"x64\Debug\\" /Fd"x64\Debug\vc100.pdb" /Gz /TP /errorReport:prompt FlyOnAShellcode.cpp -D PSAPI_VERSION=1 
+         FlyOnAShellcode.cpp
+     1>FlyOnAShellcode.cpp(6): warning C4652: compiler option 'CDecl(/Gd)' inconsistent with precompiled header; current command-line option will override that defined in the precompiled header
+     1>FlyOnAShellcode.cpp(50): warning C4996: '_strlwr': This function or variable may be unsafe. Consider using _strlwr_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(164) : see declaration of '_strlwr'
+     1>FlyOnAShellcode.cpp(133): warning C4996: '_strlwr': This function or variable may be unsafe. Consider using _strlwr_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(164) : see declaration of '_strlwr'
+     1>FlyOnAShellcode.cpp(160): warning C4267: 'initializing' : conversion from 'size_t' to 'int', possible loss of data
+     1>FlyOnAShellcode.cpp(161): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(234) : see declaration of 'fopen'
+     1>FlyOnAShellcode.cpp(170): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\stdio.h(234) : see declaration of 'fopen'
+     1>FlyOnAShellcode.cpp(174): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(197) : see declaration of 'strtok'
+     1>FlyOnAShellcode.cpp(175): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(197) : see declaration of 'strtok'
+     1>FlyOnAShellcode.cpp(204): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(197) : see declaration of 'strtok'
+     1>FlyOnAShellcode.cpp(205): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\include\string.h(197) : see declaration of 'strtok'
+       ManifestResourceCompile:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"x64\Debug\FlyOnAShellcode.exe.embed.manifest.res" x64\Debug\FlyOnAShellcode_manifest.rc 
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"D:\PatchesNData\Reverse Engineering\Shellcode DBGEngine Detector\for git\x64\Debug\FlyOnAShellcode.exe" /INCREMENTAL /NOLOGO ../TitanEngine.lib psapi.lib imagehlp.lib Shlwapi.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"x64\Debug\FlyOnAShellcode.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\PatchesNData\Reverse Engineering\Shellcode DBGEngine Detector\for git\x64\Debug\FlyOnAShellcode.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\PatchesNData\Reverse Engineering\Shellcode DBGEngine Detector\for git\x64\Debug\FlyOnAShellcode.lib" /MACHINE:X64 x64\Debug\FlyOnAShellcode.exe.embed.manifest.res
+         x64\Debug\FlyOnAShellcode.obj
+         x64\Debug\stdafx.obj
+     1>FlyOnAShellcode.obj : error LNK2019: unresolved external symbol StepOver referenced in function "void __cdecl CheckForShellcode(void)" (?CheckForShellcode@@YAXXZ)
+     1>FlyOnAShellcode.obj : error LNK2019: unresolved external symbol StopDebug referenced in function "void __cdecl CheckForShellcode(void)" (?CheckForShellcode@@YAXXZ)
+     1>FlyOnAShellcode.obj : error LNK2019: unresolved external symbol DumpProcess referenced in function "void __cdecl CheckForShellcode(void)" (?CheckForShellcode@@YAXXZ)
+     1>FlyOnAShellcode.obj : error LNK2019: unresolved external symbol GetDebuggedFileBaseAddress referenced in function "void __cdecl CheckForShellcode(void)" (?CheckForShellcode@@YAXXZ)
+     1>FlyOnAShellcode.obj : error LNK2019: unresolved external symbol DumpRegions referenced in function "void __cdecl CheckForShellcode(void)" (?CheckForShellcode@@YAXXZ)
+     1>FlyOnAShellcode.obj : error LNK2019: unresolved external symbol DumpMemory referenced in function "void __cdecl CheckForShellcode(void)" (?CheckForShellcode@@YAXXZ)
+     1>FlyOnAShellcode.obj : error LNK2019: unresolved external symbol ThreaderResumeAllThreads referenced in function "void __cdecl CheckForShellcode(void)" (?CheckForShellcode@@YAXXZ)
+     1>FlyOnAShellcode.obj : error LNK2019: unresolved external symbol ThreaderPauseAllThreads referenced in function "void __cdecl CheckForShellcode(void)" (?CheckForShellcode@@YAXXZ)
+     1>FlyOnAShellcode.obj : error LNK2019: unresolved external symbol Disassemble referenced in function "void __cdecl CheckForShellcode(void)" (?CheckForShellcode@@YAXXZ)
+     1>FlyOnAShellcode.obj : error LNK2019: unresolved external symbol GetContextData referenced in function "void __cdecl CheckForShellcode(void)" (?CheckForShellcode@@YAXXZ)
+     1>FlyOnAShellcode.obj : error LNK2019: unresolved external symbol SetNextDbgContinueStatus referenced in function "void __cdecl OnSingleStepException(void *)" (?OnSingleStepException@@YAXPEAX@Z)
+     1>FlyOnAShellcode.obj : error LNK2019: unresolved external symbol SetBPX referenced in function "bool __cdecl SetAPIBP(unsigned __int64)" (?SetAPIBP@@YA_N_K@Z)
+     1>FlyOnAShellcode.obj : error LNK2019: unresolved external symbol LengthDisassembleEx referenced in function "bool __cdecl SetAPIBP(unsigned __int64)" (?SetAPIBP@@YA_N_K@Z)
+     1>FlyOnAShellcode.obj : error LNK2019: unresolved external symbol ImporterGetRemoteAPIAddressEx referenced in function "void __cdecl OnEntry(void)" (?OnEntry@@YAXXZ)
+     1>FlyOnAShellcode.obj : error LNK2019: unresolved external symbol RemoteLoadLibrary referenced in function "void __cdecl OnEntry(void)" (?OnEntry@@YAXXZ)
+     1>FlyOnAShellcode.obj : error LNK2019: unresolved external symbol LibrarianGetLibraryInfo referenced in function "void __cdecl OnEntry(void)" (?OnEntry@@YAXXZ)
+     1>FlyOnAShellcode.obj : error LNK2019: unresolved external symbol DebugLoop referenced in function main
+     1>FlyOnAShellcode.obj : error LNK2019: unresolved external symbol SetBPXOptions referenced in function main
+     1>FlyOnAShellcode.obj : error LNK2019: unresolved external symbol SetCustomHandler referenced in function main
+     1>FlyOnAShellcode.obj : error LNK2019: unresolved external symbol InitDebugEx referenced in function main
+     1>D:\PatchesNData\Reverse Engineering\Shellcode DBGEngine Detector\for git\x64\Debug\FlyOnAShellcode.exe : fatal error LNK1120: 20 unresolved externals
+     1>Done Building Project "D:\PatchesNData\Reverse Engineering\Shellcode DBGEngine Detector\for git\FlyOnAShellcode\FlyOnAShellcode.vcxproj" (rebuild target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:01.67

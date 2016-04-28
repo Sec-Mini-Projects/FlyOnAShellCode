@@ -4,17 +4,16 @@
 //TitanEngine is used as the debugging engine in this program - http://reversinglabs.com/open-source/titanengine.html.
 
 #include "stdafx.h"
-const float MAX_WHITELIST_ENTRIES =  1000;
+#define MAX_WHITELIST_ENTRIES 80
+#define MAX_EXCLUDE_ADDRS 20
 ULONG_PTR ep = NULL;
 PROCESS_INFORMATION * info = NULL;
 LPSTR api_file = NULL;
 LPSTR addr_exclude_file = NULL;
 bool found_shellcode = false;
-unsigned long exclude_addrs[1000];
-LPSTR exclude_libs[1000];
+unsigned long exclude_addrs[MAX_WHITELIST_ENTRIES];
+LPSTR exclude_libs[MAX_EXCLUDE_ADDRS];
 bool debug_mode = false;
-
-
 
 //Checks for shellcode located at the current IP
 void __stdcall CheckForShellcode()
@@ -23,15 +22,18 @@ void __stdcall CheckForShellcode()
 	{
 		int buf_len = 600;
 		ULONG_PTR ip = (ULONG_PTR)GetContextData(UE_EIP);
-		LPSTR mod_name = (LPSTR)calloc(buf_len,sizeof(CHAR));
+		LPSTR temp = (char*)calloc(255,sizeof(char));
+		LPSTR mod_name = (LPSTR)calloc(1,buf_len);
+		ThreaderPauseAllThreads(false);
 		GetMappedFileName(info->hProcess,(LPVOID)ip,(LPSTR)mod_name,buf_len);
+		ThreaderResumeAllThreads(false);
 		unsigned short last_16_bits = (unsigned short)(ip);
 		bool is_Avoid = false;
 
 		//This will need to be changed for x64 bit code due to ALSR and other differences, as will other sections of this code.
 		//The existing code deals with Microsoft doing something weird when processing OLE objects embedded in a DOCX/XLSX/etc file.
 		int x = 0;
-		while (x < MAX_WHITELIST_ENTRIES && exclude_addrs[x] != NULL && exclude_libs[x] != NULL && is_Avoid == false)
+		while (x < MAX_WHITELIST_ENTRIES && exclude_addrs[x] != NULL && is_Avoid == false)
 		{
 			char * dll_name = strrchr(mod_name,'\\');
 			if(dll_name != NULL)
@@ -50,14 +52,16 @@ void __stdcall CheckForShellcode()
 		{
 			LPSTR instr = _strlwr((char*)Disassemble((LPVOID)ip));
 			MEMORY_BASIC_INFORMATION * mem_info = (MEMORY_BASIC_INFORMATION*)calloc(1,sizeof(MEMORY_BASIC_INFORMATION));
-			SIZE_T temp = VirtualQuery((LPCVOID)ip,mem_info,sizeof(*mem_info));
+			ThreaderPauseAllThreads(false);
+			SIZE_T temp = VirtualQueryEx(info->hProcess,(LPCVOID)ip,mem_info,sizeof(*mem_info));
+			ThreaderResumeAllThreads(false);
 			if(temp && mem_info)
 			{
-				if(mem_info->Protect > 0x20 || StrStrI(strrchr(mod_name,'\\'),".") == NULL)
+				if(mod_name == NULL || mem_info->Protect > 0x20 || StrRChr(mod_name,NULL,'.') == NULL)
 				{
-					LPSTR seg_dump_name = (LPSTR)calloc(buf_len,sizeof(CHAR));
+					LPSTR seg_dump_name = (LPSTR)calloc(buf_len,sizeof(char));
 					sprintf_s(seg_dump_name,buf_len,"%x Seg Dump.bin",mem_info->BaseAddress);
-					printf("Found exploit - creating full and partial dumps.\n");
+					printf("Found exploit - creating full and partial dumps. %s %x\n",mod_name, mem_info->Protect);
 					DumpMemory(info->hProcess,mem_info->BaseAddress,mem_info->RegionSize,seg_dump_name);
 					DumpRegions(info->hProcess,"Full Region Dump Files",false);
 					DumpProcess(info->hProcess,(LPVOID)GetDebuggedFileBaseAddress(),"Full Memory Image Dump.bin",ep);
@@ -68,7 +72,9 @@ void __stdcall CheckForShellcode()
 					exit(1);
 				}		
 				if(debug_mode == true)
-					printf("Checked for shellcode %s %x %s 4\n",instr,ip,strrchr(mod_name,'\\')+1);
+					ThreaderPauseAllThreads(false);
+					printf("Checked for shellcode %s %x %s 4\n",instr,ip,mod_name);
+					ThreaderResumeAllThreads(false);
 			}
 			if(mem_info)
 				free(mem_info);
@@ -76,6 +82,8 @@ void __stdcall CheckForShellcode()
 		}
 		if(mod_name)
 			free(mod_name);
+		if(temp)
+			free(temp);
 	}
 }
 
@@ -88,7 +96,7 @@ void  __stdcall OnStep()
 	SIZE_T bytes_read = NULL;
 	bool is_ret = false;
 	ReadProcessMemory(info->hProcess,(LPCVOID)ip,&instr,sizeof(instr),&bytes_read);
-	if(bytes_read)
+	if(bytes_read != NULL)
 	{
 		if(instr ==0xC2 || instr ==0xC3 || instr ==0xCA || instr ==0xCB)
 		{
@@ -110,12 +118,7 @@ void __stdcall OnSingleStepException(void* ExceptionData)
 //Creates a thread for each breakpoint hit to reduce bottlenecks.
 void __stdcall BPHandler()
 {
-	HANDLE created_thread = CreateThread(NULL,NULL,(LPTHREAD_START_ROUTINE)StepOver,OnStep,NULL,NULL);
-	if(created_thread == NULL)
-	{
-		printf("***###ERROR### - Onstep thread creation failed, incomplete results are likely.***\n");
-	}
-	//StepOver(OnStep);
+	StepOver(OnStep);
 }
 
 //Searches for the first JXX or call and creates a breakpoint.
@@ -153,8 +156,9 @@ void __stdcall OnEntry()
 {
 	ep = GetContextData(UE_EIP);
 	int buf_len = 500;
-    LPSTR buf = (LPSTR)calloc(buf_len,sizeof(CHAR));
-	LPSTR exclude_buf = (LPSTR)calloc(buf_len,sizeof(CHAR));
+    LPSTR buf = (LPSTR)calloc(buf_len,sizeof(char));
+	LPSTR exclude_buf = (LPSTR)calloc(buf_len,sizeof(char));
+	int temp = strlen(buf);
 	FILE * f_api_file = fopen(api_file,"r");
 	FILE * f_exclude_file = NULL;
 	if (addr_exclude_file == NULL)
@@ -178,7 +182,7 @@ void __stdcall OnEntry()
 				if(exclude_lib[strlen(exclude_lib)-1] == 0x0a)
 					exclude_lib[strlen(exclude_lib)-1] = 0x00;
 				long exclude_this_addr = strtol(exclude_addr,NULL,16);
-				exclude_libs[x] = (LPSTR)calloc(buf_len,sizeof(CHAR));
+				exclude_libs[x] = (LPSTR)calloc(buf_len,sizeof(char));
 				exclude_addrs[x] = exclude_this_addr;
 				strcpy_s(exclude_libs[x],buf_len,exclude_lib);
 				if(debug_mode == true)
@@ -254,6 +258,7 @@ void __stdcall OnEntry()
 //Inits the debugger library and callbacks.
 int main(int argc, char * argv[])
 {
+
 	int x = 1;
 	LPSTR program = NULL;
 	LPSTR working = NULL;
@@ -304,7 +309,7 @@ int main(int argc, char * argv[])
 	}
 	else
 	{
-		printf("\nFlyOnAShellcode V2.9.\n");
+		printf("\nFlyOnAShellcode V3.0.\n");
 		printf("Sec-Mini-Projects (2015) under the MIT License - See \"LICENSE\" for Details.\n");
 		printf("TitanEngine is used as the debugging engine in this program - http://reversinglabs.com/open-source/titanengine.html.\n");
 		printf("***WARNING*** - This program will RUN the supplied executable and malicious input file. USE ONLY IN MALWARE RESEARCH LABS.\n\n");
