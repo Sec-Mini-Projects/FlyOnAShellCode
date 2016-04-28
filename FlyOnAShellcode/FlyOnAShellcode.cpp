@@ -4,15 +4,14 @@
 //TitanEngine is used as the debugging engine in this program - http://reversinglabs.com/open-source/titanengine.html.
 
 #include "stdafx.h"
-#define MAX_WHITELIST_ENTRIES 80
-#define MAX_EXCLUDE_ADDRS 20
+#define MAX_WHITELIST 200
 ULONG_PTR ep = NULL;
 PROCESS_INFORMATION * info = NULL;
 LPSTR api_file = NULL;
 LPSTR addr_exclude_file = NULL;
 bool found_shellcode = false;
-unsigned long exclude_addrs[MAX_WHITELIST_ENTRIES];
-LPSTR exclude_libs[MAX_EXCLUDE_ADDRS];
+unsigned long exclude_addrs[MAX_WHITELIST];
+LPSTR exclude_libs[MAX_WHITELIST];
 bool debug_mode = false;
 
 //Checks for shellcode located at the current IP
@@ -33,7 +32,7 @@ void __stdcall CheckForShellcode()
 		//This will need to be changed for x64 bit code due to ALSR and other differences, as will other sections of this code.
 		//The existing code deals with Microsoft doing something weird when processing OLE objects embedded in a DOCX/XLSX/etc file.
 		int x = 0;
-		while (x < MAX_WHITELIST_ENTRIES && exclude_addrs[x] != NULL && is_Avoid == false)
+		while (x < MAX_WHITELIST && exclude_addrs[x] != NULL && exclude_libs[x] != NULL && is_Avoid == false)
 		{
 			char * dll_name = strrchr(mod_name,'\\');
 			if(dll_name != NULL)
@@ -72,9 +71,11 @@ void __stdcall CheckForShellcode()
 					exit(1);
 				}		
 				if(debug_mode == true)
+				{
 					ThreaderPauseAllThreads(false);
 					printf("Checked for shellcode %s %x %s 4\n",instr,ip,mod_name);
 					ThreaderResumeAllThreads(false);
+				}
 			}
 			if(mem_info)
 				free(mem_info);
@@ -170,7 +171,7 @@ void __stdcall OnEntry()
 	{
 		f_exclude_file = fopen(addr_exclude_file,"r");
 		int x = 0;
-		while (fgets(exclude_buf,buf_len/sizeof(*exclude_buf), f_exclude_file) && x < MAX_WHITELIST_ENTRIES)
+		while (fgets(exclude_buf,buf_len/sizeof(*exclude_buf), f_exclude_file) && x < MAX_WHITELIST)
 		{
 			LPSTR exclude_lib = strtok(exclude_buf,",");
 			LPSTR exclude_addr = strtok(NULL,",");
