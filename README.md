@@ -48,7 +48,7 @@ The second paramter is the last two bytes of the address to be whitelisted. This
 
 Compiled & written using Visual Studio 2010.
 
-Compile the latest TitanEngine project (http://reversinglabs.com/open-source/titanengine.html.) which is used as the debugging engine in this program.
+Compile the latest TitanEngine project (https://bitbucket.org/titanengineupdate/titanengine-update.) which is used as the debugging engine in this program.
 
 **Example: Place the binaries and ".lib" file into the "<root>\TitanEngine\" folder and the dll into the same directory as the main .EXE**
 
