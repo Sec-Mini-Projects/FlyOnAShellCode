@@ -19,16 +19,14 @@ void __stdcall CheckForShellcode()
 {
 	if(found_shellcode == false)
 	{
+		ThreaderPauseAllThreads(false);
 		int buf_len = 600;
 		ULONG_PTR ip = (ULONG_PTR)GetContextData(UE_EIP);
 		LPSTR temp = (char*)calloc(255,sizeof(char));
 		LPSTR mod_name = (LPSTR)calloc(1,buf_len);
-		ThreaderPauseAllThreads(false);
 		GetMappedFileName(info->hProcess,(LPVOID)ip,(LPSTR)mod_name,buf_len);
-		ThreaderResumeAllThreads(false);
 		unsigned short last_16_bits = (unsigned short)(ip);
 		bool is_Avoid = false;
-
 		//This will need to be changed for x64 bit code due to ALSR and other differences, as will other sections of this code.
 		//The existing code deals with Microsoft doing something weird when processing OLE objects embedded in a DOCX/XLSX/etc file.
 		int x = 0;
@@ -51,16 +49,14 @@ void __stdcall CheckForShellcode()
 		{
 			LPSTR instr = _strlwr((char*)Disassemble((LPVOID)ip));
 			MEMORY_BASIC_INFORMATION * mem_info = (MEMORY_BASIC_INFORMATION*)calloc(1,sizeof(MEMORY_BASIC_INFORMATION));
-			ThreaderPauseAllThreads(false);
 			SIZE_T temp = VirtualQueryEx(info->hProcess,(LPCVOID)ip,mem_info,sizeof(*mem_info));
-			ThreaderResumeAllThreads(false);
 			if(temp && mem_info)
 			{
 				if(mod_name == NULL || mem_info->Protect > 0x20 || StrRChr(mod_name,NULL,'.') == NULL)
 				{
 					LPSTR seg_dump_name = (LPSTR)calloc(buf_len,sizeof(char));
 					sprintf_s(seg_dump_name,buf_len,"%x Seg Dump.bin",mem_info->BaseAddress);
-					printf("Found exploit - creating full and partial dumps. %s %x\n",mod_name, mem_info->Protect);
+					printf("Found exploit at address %x - creating full and partial dumps. Mod Name is: %s Mem Protect: %x\n(Note: If this was unexpected, please run using the \"-d\" option to retrieve the last 2 bytes of the address for whitelisting)",ip,mod_name, mem_info->Protect);
 					DumpMemory(info->hProcess,mem_info->BaseAddress,mem_info->RegionSize,seg_dump_name);
 					DumpRegions(info->hProcess,"Full Region Dump Files",false);
 					DumpProcess(info->hProcess,(LPVOID)GetDebuggedFileBaseAddress(),"Full Memory Image Dump.bin",ep);
@@ -72,9 +68,7 @@ void __stdcall CheckForShellcode()
 				}		
 				if(debug_mode == true)
 				{
-					ThreaderPauseAllThreads(false);
 					printf("Checked for shellcode %s %x %s 4\n",instr,ip,mod_name);
-					ThreaderResumeAllThreads(false);
 				}
 			}
 			if(mem_info)
@@ -86,6 +80,7 @@ void __stdcall CheckForShellcode()
 		if(temp)
 			free(temp);
 	}
+	ThreaderResumeAllThreads(false);
 }
 
 //Steps over code, determining whether a return instruction has been encountered, if not, just keeps on stepping over.
