@@ -8,6 +8,12 @@ Starts the execution of a x86 32 bit **ONLY** vulnerable program with optional c
 
 **Hooking a large number of commonly called functions will slow down execution and may cause a crash.**
 
+##System Requirements
+
+Minimum OS - Windows 7 x64 (Tested).  
+
+Should run on Windows 8/10.  If there any issues, please contact me.
+
 ##Warnings
 
 This program will RUN the supplied executable and malicious input file. USE ONLY IN MALWARE RESEARCH LABS.
