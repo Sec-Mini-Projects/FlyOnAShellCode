@@ -183,8 +183,8 @@ void __stdcall OnEntry()
 				strcpy_s(exclude_libs[x],buf_len,exclude_lib);
 				if(debug_mode == true)
 					printf("***###LOGGING### - Read exclude addr entry: %s %x***\n",exclude_lib,exclude_this_addr);
-				x++;
 			}
+			x++;
 		}
 	}
 
