@@ -17,9 +17,9 @@ bool debug_mode = false;
 //Checks for shellcode located at the current IP
 void __stdcall CheckForShellcode()
 {
+	ThreaderPauseAllThreads(false);
 	if(found_shellcode == false)
 	{
-		ThreaderPauseAllThreads(false);
 		int buf_len = 600;
 		ULONG_PTR ip = (ULONG_PTR)GetContextData(UE_EIP);
 		LPSTR temp = (char*)calloc(255,sizeof(char));
