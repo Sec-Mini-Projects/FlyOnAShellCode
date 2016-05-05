@@ -152,7 +152,7 @@ void __stdcall OnEntry()
 {
 	ep = GetContextData(UE_EIP);
 	int buf_len = 500;
-    LPSTR buf = (LPSTR)calloc(buf_len,sizeof(char));
+	LPSTR buf = (LPSTR)calloc(buf_len,sizeof(char));
 	LPSTR exclude_buf = (LPSTR)calloc(buf_len,sizeof(char));
 	int temp = strlen(buf);
 	FILE * f_api_file = fopen(api_file,"r");
