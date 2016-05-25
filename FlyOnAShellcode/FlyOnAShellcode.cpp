@@ -154,7 +154,6 @@ void __stdcall OnEntry()
 	int buf_len = 500;
 	LPSTR buf = (LPSTR)calloc(buf_len,sizeof(char));
 	LPSTR exclude_buf = (LPSTR)calloc(buf_len,sizeof(char));
-	int temp = strlen(buf);
 	FILE * f_api_file = fopen(api_file,"r");
 	FILE * f_exclude_file = NULL;
 	if (addr_exclude_file == NULL)
