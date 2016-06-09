@@ -22,7 +22,6 @@ void __stdcall CheckForShellcode()
 	{
 		int buf_len = 600;
 		ULONG_PTR ip = (ULONG_PTR)GetContextData(UE_EIP);
-		LPSTR temp = (char*)calloc(255,sizeof(char));
 		LPSTR mod_name = (LPSTR)calloc(1,buf_len);
 		GetMappedFileName(info->hProcess,(LPVOID)ip,(LPSTR)mod_name,buf_len);
 		unsigned short last_16_bits = (unsigned short)(ip);
@@ -77,8 +76,6 @@ void __stdcall CheckForShellcode()
 		}
 		if(mod_name)
 			free(mod_name);
-		if(temp)
-			free(temp);
 	}
 	ThreaderResumeAllThreads(false);
 }
