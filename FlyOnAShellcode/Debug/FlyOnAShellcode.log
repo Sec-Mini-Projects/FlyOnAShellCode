@@ -1,53 +1,25 @@
-﻿Build started 4/30/2016 3:11:04 PM.
-     1>Project "D:\PatchesNData\GIT Open Source Projects\FlyOnAShellcode v3.0 Final\FlyOnAShellcode\FlyOnAShellcode\FlyOnAShellcode.vcxproj" on node 2 (rebuild target(s)).
-     1>_PrepareForClean:
-         Deleting file "Debug\FlyOnAShellcode.lastbuildstate".
-       InitializeBuildStatus:
-         Creating "Debug\FlyOnAShellcode.unsuccessfulbuild" because "AlwaysCreate" was specified.
-       ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp"Debug\FlyOnAShellcode.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
-         stdafx.cpp
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\FlyOnAShellcode.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gz /TP /analyze- /errorReport:prompt FlyOnAShellcode.cpp  -D PSAPI_VERSION=1 
-         FlyOnAShellcode.cpp
-     1>d:\patchesndata\git open source projects\flyonashellcode v3.0 final\flyonashellcode\flyonashellcode\flyonashellcode.cpp(6): warning C4652: compiler option 'StdCall(/Gz)' inconsistent with precompiled header; current command-line option will override that defined in the precompiled header
-     1>d:\patchesndata\git open source projects\flyonashellcode v3.0 final\flyonashellcode\flyonashellcode\flyonashellcode.cpp(6): warning C4652: compiler option 'CDecl(/Gd)' inconsistent with precompiled header; current command-line option will override that defined in the precompiled header
-     1>d:\patchesndata\git open source projects\flyonashellcode v3.0 final\flyonashellcode\flyonashellcode\flyonashellcode.cpp(50): warning C4996: '_strlwr': This function or variable may be unsafe. Consider using _strlwr_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(164) : see declaration of '_strlwr'
-     1>d:\patchesndata\git open source projects\flyonashellcode v3.0 final\flyonashellcode\flyonashellcode\flyonashellcode.cpp(130): warning C4996: '_strlwr': This function or variable may be unsafe. Consider using _strlwr_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(164) : see declaration of '_strlwr'
-     1>d:\patchesndata\git open source projects\flyonashellcode v3.0 final\flyonashellcode\flyonashellcode\flyonashellcode.cpp(158): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : see declaration of 'fopen'
-     1>d:\patchesndata\git open source projects\flyonashellcode v3.0 final\flyonashellcode\flyonashellcode\flyonashellcode.cpp(167): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdio.h(234) : see declaration of 'fopen'
-     1>d:\patchesndata\git open source projects\flyonashellcode v3.0 final\flyonashellcode\flyonashellcode\flyonashellcode.cpp(171): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(197) : see declaration of 'strtok'
-     1>d:\patchesndata\git open source projects\flyonashellcode v3.0 final\flyonashellcode\flyonashellcode\flyonashellcode.cpp(172): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(197) : see declaration of 'strtok'
-     1>d:\patchesndata\git open source projects\flyonashellcode v3.0 final\flyonashellcode\flyonashellcode\flyonashellcode.cpp(201): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(197) : see declaration of 'strtok'
-     1>d:\patchesndata\git open source projects\flyonashellcode v3.0 final\flyonashellcode\flyonashellcode\flyonashellcode.cpp(202): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(197) : see declaration of 'strtok'
-     1>d:\patchesndata\git open source projects\flyonashellcode v3.0 final\flyonashellcode\flyonashellcode\flyonashellcode.cpp(256): warning C4007: 'main' : must be '__cdecl'
-       ManifestResourceCompile:
-         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\FlyOnAShellcode.exe.embed.manifest.res" Debug\FlyOnAShellcode_manifest.rc 
-       Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\PatchesNData\GIT Open Source Projects\FlyOnAShellcode v3.0 Final\FlyOnAShellcode\Debug\FlyOnAShellcode.exe" /INCREMENTAL /NOLOGO ../TitanEngine/TitanEngine.lib psapi.lib imagehlp.lib Shlwapi.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\FlyOnAShellcode.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\PatchesNData\GIT Open Source Projects\FlyOnAShellcode v3.0 Final\FlyOnAShellcode\Debug\FlyOnAShellcode.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\PatchesNData\GIT Open Source Projects\FlyOnAShellcode v3.0 Final\FlyOnAShellcode\Debug\FlyOnAShellcode.lib" /MACHINE:X86 Debug\FlyOnAShellcode.exe.embed.manifest.res
-         Debug\FlyOnAShellcode.obj
-         Debug\stdafx.obj
-       Manifest:
-         Deleting file "Debug\FlyOnAShellcode.exe.embed.manifest".
-         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\FlyOnAShellcode.exe.embed.manifest" /manifest Debug\FlyOnAShellcode.exe.intermediate.manifest
-         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\FlyOnAShellcode.exe.embed.manifest.res" Debug\FlyOnAShellcode_manifest.rc 
-       LinkEmbedManifest:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\PatchesNData\GIT Open Source Projects\FlyOnAShellcode v3.0 Final\FlyOnAShellcode\Debug\FlyOnAShellcode.exe" /INCREMENTAL /NOLOGO ../TitanEngine/TitanEngine.lib psapi.lib imagehlp.lib Shlwapi.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\FlyOnAShellcode.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\PatchesNData\GIT Open Source Projects\FlyOnAShellcode v3.0 Final\FlyOnAShellcode\Debug\FlyOnAShellcode.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\PatchesNData\GIT Open Source Projects\FlyOnAShellcode v3.0 Final\FlyOnAShellcode\Debug\FlyOnAShellcode.lib" /MACHINE:X86 Debug\FlyOnAShellcode.exe.embed.manifest.res
-         Debug\FlyOnAShellcode.obj
-         Debug\stdafx.obj
-         FlyOnAShellcode.vcxproj -> D:\PatchesNData\GIT Open Source Projects\FlyOnAShellcode v3.0 Final\FlyOnAShellcode\Debug\FlyOnAShellcode.exe
-       FinalizeBuildStatus:
-         Deleting file "Debug\FlyOnAShellcode.unsuccessfulbuild".
-         Touching "Debug\FlyOnAShellcode.lastbuildstate".
-     1>Done Building Project "D:\PatchesNData\GIT Open Source Projects\FlyOnAShellcode v3.0 Final\FlyOnAShellcode\FlyOnAShellcode\FlyOnAShellcode.vcxproj" (rebuild target(s)).
-
-Build succeeded.
-
-Time Elapsed 00:00:02.80
+﻿  stdafx.cpp
+  FlyOnAShellcode.cpp
+c:\users\scott\source\repos\flyonashellcode\flyonashellcode\flyonashellcode.cpp(6): warning C4652: compiler option 'StdCall(/Gz)' inconsistent with precompiled header; current command-line option will override that defined in the precompiled header
+c:\users\scott\source\repos\flyonashellcode\flyonashellcode\flyonashellcode.cpp(6): warning C4652: compiler option 'CDecl(/Gd)' inconsistent with precompiled header; current command-line option will override that defined in the precompiled header
+c:\users\scott\source\repos\flyonashellcode\flyonashellcode\flyonashellcode.cpp(6): warning C4005: 'PSAPI_VERSION': macro redefinition
+  c:\program files (x86)\windows kits\8.1\include\um\psapi.h(51): note: see previous definition of 'PSAPI_VERSION'
+c:\users\scott\source\repos\flyonashellcode\flyonashellcode\flyonashellcode.cpp(50): warning C4996: '_strlwr': This function or variable may be unsafe. Consider using _strlwr_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(233): note: see declaration of '_strlwr'
+c:\users\scott\source\repos\flyonashellcode\flyonashellcode\flyonashellcode.cpp(58): warning C4477: 'sprintf_s' : format string '%x' requires an argument of type 'unsigned int', but variadic argument 1 has type 'PVOID'
+c:\users\scott\source\repos\flyonashellcode\flyonashellcode\flyonashellcode.cpp(130): warning C4996: '_strlwr': This function or variable may be unsafe. Consider using _strlwr_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(233): note: see declaration of '_strlwr'
+c:\users\scott\source\repos\flyonashellcode\flyonashellcode\flyonashellcode.cpp(157): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
+c:\users\scott\source\repos\flyonashellcode\flyonashellcode\flyonashellcode.cpp(166): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
+c:\users\scott\source\repos\flyonashellcode\flyonashellcode\flyonashellcode.cpp(170): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
+c:\users\scott\source\repos\flyonashellcode\flyonashellcode\flyonashellcode.cpp(171): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
+c:\users\scott\source\repos\flyonashellcode\flyonashellcode\flyonashellcode.cpp(200): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
+c:\users\scott\source\repos\flyonashellcode\flyonashellcode\flyonashellcode.cpp(201): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
+c:\users\scott\source\repos\flyonashellcode\flyonashellcode\flyonashellcode.cpp(255): warning C4007: 'main': must be '__cdecl'
+  FlyOnAShellcode.vcxproj -> C:\Users\scott\Source\Repos\FlyOnAShellCode\Debug\FlyOnAShellcode.exe
