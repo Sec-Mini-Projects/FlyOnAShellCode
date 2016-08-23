@@ -147,7 +147,7 @@ bool  __stdcall SetAPIBP(ULONG_PTR api_addr)
 	return found;
 }
 
-//Entry point handler for the program, reads the APIS to be hooked and applies them through the SetAPIBP fucntion.
+//Entry point handler for the program, reads the APIS to be hooked and applies them through the SetAPIBP function.
 void __stdcall OnEntry()
 {
 	ep = GetContextData(UE_EIP);
