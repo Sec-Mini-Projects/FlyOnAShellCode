@@ -4,7 +4,7 @@ Created by: Sec-Mini-Projects (2015) under the MIT License - See "LICENSE" for D
 
 ##Description:
 
-Starts the execution of a x86 32 bit **ONLY** vulnerable program with optional command line parameters and hooks the API names read from a text file.  When these API calls are hit, the program will constantly run until return and check the return address for shellcode like characteristics.
+Starts the execution of a x86 32 bit **ONLY** vulnerable program with optional command line parameters and hooks the API names read from a text file.  When these API calls are hit, the program will constantly "run until return" and check the return address for shellcode-like characteristics.
 
 **Hooking a large number of commonly called functions will slow down execution and may cause a crash.**
 
@@ -52,7 +52,7 @@ The second paramter is the last two bytes of the address to be whitelisted. This
 
 ##Compiling & Dependencies
 
-Compiled & written using Visual Studio 2010.
+Compiled & written initially using Visual Studio 2010 and have recently transitioned to Visual Studio 2015.
 
 Compile the latest TitanEngine project (https://bitbucket.org/titanengineupdate/titanengine-update.) which is used as the debugging engine in this program.
 
