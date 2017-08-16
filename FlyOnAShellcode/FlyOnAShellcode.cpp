@@ -23,7 +23,7 @@ void __stdcall CheckForShellcode()
 	{
 		ULONG_PTR ip = (ULONG_PTR)GetContextData(UE_EIP);
 		LPSTR temp = (char*)calloc(255, sizeof(char));
-		LPSTR mod_name = (LPSTR)calloc(1, MAX_BUF_LENGTH);
+		LPSTR mod_name = (LPSTR)calloc(MAX_BUF_LENGTH,1);
 		GetMappedFileName(info->hProcess, (LPVOID)ip, (LPSTR)mod_name, MAX_BUF_LENGTH);
 		unsigned short last_16_bits = (unsigned short)(ip);
 		bool is_Avoid = false;

@@ -17,4 +17,5 @@ FlyOnAShellcode.cpp(200): warning C4996: 'strtok': This function or variable may
   C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
 FlyOnAShellcode.cpp(201): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
-  FlyOnAShellcode.vcxproj -> C:\Users\scott\Source\Repos\FlyOnAShellCode\Release\FlyOnAShellcode.exe
+  FlyOnAShellcode.vcxproj -> D:\Reverse Engineering Software (Common)\GIT Open Source Projects\FlyOnAShellCode\Release\FlyOnAShellcode.exe
+  FlyOnAShellcode.vcxproj -> D:\Reverse Engineering Software (Common)\GIT Open Source Projects\FlyOnAShellCode\Release\FlyOnAShellcode.pdb (Full PDB)
