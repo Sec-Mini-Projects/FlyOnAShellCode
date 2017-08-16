@@ -1,0 +1,111 @@
+﻿  stdafx.cpp
+  FlyOnAShellcode.cpp
+FlyOnAShellcode.cpp(35): error C2665: 'strrchr': none of the 2 overloads could convert all the argument types
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\string.h(529): note: could be 'char *strrchr(char *const ,const int)'
+  C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\include\vcruntime_string.h(73): note: or       'const char *strrchr(const char *,int)'
+  FlyOnAShellcode.cpp(35): note: while trying to match the argument list '(LPTSTR, char)'
+FlyOnAShellcode.cpp(38): error C2664: 'int StrCmpIW(PCWSTR,PCWSTR)': cannot convert argument 1 from 'char *' to 'PCWSTR'
+  FlyOnAShellcode.cpp(38): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+FlyOnAShellcode.cpp(50): error C2440: 'initializing': cannot convert from 'char *' to 'LPTSTR'
+  FlyOnAShellcode.cpp(50): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+FlyOnAShellcode.cpp(57): error C2440: 'initializing': cannot convert from 'LPTSTR' to 'char *'
+  FlyOnAShellcode.cpp(57): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+FlyOnAShellcode.cpp(58): warning C4477: 'sprintf_s' : format string '%x' requires an argument of type 'unsigned int', but variadic argument 1 has type 'PVOID'
+FlyOnAShellcode.cpp(58): warning C4313: 'sprintf_s': '%x' in format string conflicts with argument 1 of type 'PVOID'
+FlyOnAShellcode.cpp(59): warning C4477: 'printf' : format string '%x' requires an argument of type 'unsigned int', but variadic argument 1 has type 'ULONG_PTR'
+  FlyOnAShellcode.cpp(59): note: consider using '%llx' in the format string
+  FlyOnAShellcode.cpp(59): note: consider using '%Ix' in the format string
+  FlyOnAShellcode.cpp(59): note: consider using '%I64x' in the format string
+FlyOnAShellcode.cpp(59): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 2 has type 'LPTSTR'
+  FlyOnAShellcode.cpp(59): note: consider using '%ls' in the format string
+  FlyOnAShellcode.cpp(59): note: consider using '%lls' in the format string
+  FlyOnAShellcode.cpp(59): note: consider using '%Ls' in the format string
+  FlyOnAShellcode.cpp(59): note: consider using '%ws' in the format string
+FlyOnAShellcode.cpp(71): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'LPTSTR'
+  FlyOnAShellcode.cpp(71): note: consider using '%ls' in the format string
+  FlyOnAShellcode.cpp(71): note: consider using '%lls' in the format string
+  FlyOnAShellcode.cpp(71): note: consider using '%Ls' in the format string
+  FlyOnAShellcode.cpp(71): note: consider using '%ws' in the format string
+FlyOnAShellcode.cpp(71): warning C4477: 'printf' : format string '%x' requires an argument of type 'unsigned int', but variadic argument 2 has type 'ULONG_PTR'
+  FlyOnAShellcode.cpp(71): note: consider using '%llx' in the format string
+  FlyOnAShellcode.cpp(71): note: consider using '%Ix' in the format string
+  FlyOnAShellcode.cpp(71): note: consider using '%I64x' in the format string
+FlyOnAShellcode.cpp(71): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 3 has type 'LPTSTR'
+  FlyOnAShellcode.cpp(71): note: consider using '%ls' in the format string
+  FlyOnAShellcode.cpp(71): note: consider using '%lls' in the format string
+  FlyOnAShellcode.cpp(71): note: consider using '%Ls' in the format string
+  FlyOnAShellcode.cpp(71): note: consider using '%ws' in the format string
+FlyOnAShellcode.cpp(131): error C2664: 'PWSTR StrStrIW(PCWSTR,PCWSTR)': cannot convert argument 1 from 'LPSTR' to 'PCWSTR'
+  FlyOnAShellcode.cpp(131): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+FlyOnAShellcode.cpp(130): warning C4996: '_strlwr': This function or variable may be unsafe. Consider using _strlwr_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.10240.0\ucrt\string.h(233): note: see declaration of '_strlwr'
+FlyOnAShellcode.cpp(155): error C2440: 'initializing': cannot convert from 'LPTSTR' to 'LPSTR'
+  FlyOnAShellcode.cpp(155): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+FlyOnAShellcode.cpp(156): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+FlyOnAShellcode.cpp(157): error C2664: 'FILE *fopen(const char *,const char *)': cannot convert argument 1 from 'LPTSTR' to 'const char *'
+  FlyOnAShellcode.cpp(157): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+FlyOnAShellcode.cpp(166): error C2664: 'FILE *fopen(const char *,const char *)': cannot convert argument 1 from 'LPTSTR' to 'const char *'
+  FlyOnAShellcode.cpp(166): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+FlyOnAShellcode.cpp(170): error C2440: 'initializing': cannot convert from 'char *' to 'LPTSTR'
+  FlyOnAShellcode.cpp(170): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+FlyOnAShellcode.cpp(171): error C2440: 'initializing': cannot convert from 'char *' to 'LPTSTR'
+  FlyOnAShellcode.cpp(171): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+FlyOnAShellcode.cpp(175): error C2664: 'size_t strlen(const char *)': cannot convert argument 1 from 'LPTSTR' to 'const char *'
+  FlyOnAShellcode.cpp(175): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+FlyOnAShellcode.cpp(176): error C2664: 'size_t strlen(const char *)': cannot convert argument 1 from 'LPTSTR' to 'const char *'
+  FlyOnAShellcode.cpp(176): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+FlyOnAShellcode.cpp(177): error C2664: 'size_t strlen(const char *)': cannot convert argument 1 from 'LPTSTR' to 'const char *'
+  FlyOnAShellcode.cpp(177): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+FlyOnAShellcode.cpp(178): error C2664: 'size_t strlen(const char *)': cannot convert argument 1 from 'LPTSTR' to 'const char *'
+  FlyOnAShellcode.cpp(178): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+FlyOnAShellcode.cpp(179): error C2664: 'long strtol(const char *,char **,int)': cannot convert argument 1 from 'LPTSTR' to 'const char *'
+  FlyOnAShellcode.cpp(179): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+FlyOnAShellcode.cpp(182): error C2664: 'errno_t strcpy_s(char *,rsize_t,const char *)': cannot convert argument 1 from 'LPTSTR' to 'char *'
+  FlyOnAShellcode.cpp(182): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+FlyOnAShellcode.cpp(200): error C2440: 'initializing': cannot convert from 'char *' to 'LPTSTR'
+  FlyOnAShellcode.cpp(200): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+FlyOnAShellcode.cpp(201): error C2440: 'initializing': cannot convert from 'char *' to 'LPTSTR'
+  FlyOnAShellcode.cpp(201): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+FlyOnAShellcode.cpp(203): error C2664: 'size_t strlen(const char *)': cannot convert argument 1 from 'LPTSTR' to 'const char *'
+  FlyOnAShellcode.cpp(203): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+FlyOnAShellcode.cpp(204): error C2664: 'size_t strlen(const char *)': cannot convert argument 1 from 'LPTSTR' to 'const char *'
+  FlyOnAShellcode.cpp(204): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+FlyOnAShellcode.cpp(214): error C2664: 'void *LibrarianGetLibraryInfo(const char *)': cannot convert argument 1 from 'LPTSTR' to 'const char *'
+  FlyOnAShellcode.cpp(214): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+FlyOnAShellcode.cpp(216): error C2664: 'bool RemoteLoadLibrary(HANDLE,const char *,bool)': cannot convert argument 2 from 'LPTSTR' to 'const char *'
+  FlyOnAShellcode.cpp(216): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+FlyOnAShellcode.cpp(230): error C2664: 'ULONG_PTR ImporterGetRemoteAPIAddressEx(const char *,const char *)': cannot convert argument 1 from 'LPTSTR' to 'const char *'
+  FlyOnAShellcode.cpp(230): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+FlyOnAShellcode.cpp(184): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'LPTSTR'
+  FlyOnAShellcode.cpp(184): note: consider using '%ls' in the format string
+  FlyOnAShellcode.cpp(184): note: consider using '%lls' in the format string
+  FlyOnAShellcode.cpp(184): note: consider using '%Ls' in the format string
+  FlyOnAShellcode.cpp(184): note: consider using '%ws' in the format string
+FlyOnAShellcode.cpp(208): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'LPTSTR'
+  FlyOnAShellcode.cpp(208): note: consider using '%ls' in the format string
+  FlyOnAShellcode.cpp(208): note: consider using '%lls' in the format string
+  FlyOnAShellcode.cpp(208): note: consider using '%Ls' in the format string
+  FlyOnAShellcode.cpp(208): note: consider using '%ws' in the format string
+FlyOnAShellcode.cpp(213): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'LPTSTR'
+  FlyOnAShellcode.cpp(213): note: consider using '%ls' in the format string
+  FlyOnAShellcode.cpp(213): note: consider using '%lls' in the format string
+  FlyOnAShellcode.cpp(213): note: consider using '%Ls' in the format string
+  FlyOnAShellcode.cpp(213): note: consider using '%ws' in the format string
+FlyOnAShellcode.cpp(234): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'LPTSTR'
+  FlyOnAShellcode.cpp(234): note: consider using '%ls' in the format string
+  FlyOnAShellcode.cpp(234): note: consider using '%lls' in the format string
+  FlyOnAShellcode.cpp(234): note: consider using '%Ls' in the format string
+  FlyOnAShellcode.cpp(234): note: consider using '%ws' in the format string
+FlyOnAShellcode.cpp(234): warning C4477: 'printf' : format string '%x' requires an argument of type 'unsigned int', but variadic argument 2 has type 'ULONG_PTR'
+  FlyOnAShellcode.cpp(234): note: consider using '%llx' in the format string
+  FlyOnAShellcode.cpp(234): note: consider using '%Ix' in the format string
+  FlyOnAShellcode.cpp(234): note: consider using '%I64x' in the format string
+FlyOnAShellcode.cpp(239): warning C4477: 'printf' : format string '%s' requires an argument of type 'char *', but variadic argument 1 has type 'LPTSTR'
+  FlyOnAShellcode.cpp(239): note: consider using '%ls' in the format string
+  FlyOnAShellcode.cpp(239): note: consider using '%lls' in the format string
+  FlyOnAShellcode.cpp(239): note: consider using '%Ls' in the format string
+  FlyOnAShellcode.cpp(239): note: consider using '%ws' in the format string
+FlyOnAShellcode.cpp(255): error C2731: 'main': function cannot be overloaded
+  FlyOnAShellcode.cpp(254): note: see declaration of 'main'
+FlyOnAShellcode.cpp(292): error C2664: 'void *InitDebugEx(const char *,const char *,const char *,LPVOID)': cannot convert argument 1 from 'LPTSTR' to 'const char *'
+  FlyOnAShellcode.cpp(292): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
