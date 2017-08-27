@@ -61,7 +61,7 @@ void __stdcall CheckForShellcode()
 					DumpRegions(info->hProcess, "Full Region Dump Files", false);
 					DumpProcess(info->hProcess, (LPVOID)GetDebuggedFileBaseAddress(), "Full Memory Image Dump.bin", ep);
 					found_shellcode = true;
-					if (seg_dump_name)
+					if (seg_dump_name != NULL)
 						free(seg_dump_name);
 					StopDebug();
 					exit(1);
@@ -71,13 +71,13 @@ void __stdcall CheckForShellcode()
 					printf("Checked for shellcode %s %x %s 4\n", instr, ip, mod_name);
 				}
 			}
-			if (mem_info)
+			if (mem_info != NULL)
 				free(mem_info);
 			StepOver(OnStep);
 		}
-		if (mod_name)
+		if (mod_name != NULL)
 			free(mod_name);
-		if (temp)
+		if (temp != NULL)
 			free(temp);
 	}
 	ThreaderResumeAllThreads(false);
@@ -246,7 +246,7 @@ void __stdcall OnEntry()
 		fclose(f_api_file);
 	if (f_exclude_file)
 		fclose(f_exclude_file);
-	if (buf)
+	if (buf != NULL)
 		free(buf);
 }
 
